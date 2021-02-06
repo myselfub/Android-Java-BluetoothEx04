@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="4dp"
+    tools:context=".views.ui.DeviceSearchActivity">
+
+    <TextView
+        android:id="@+id/tv_device_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="장치 검색"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_message_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:lineSpacingExtra="-4dp"
+        android:text="주변에 있고, 연결 가능한 장치만\n여기에 표시됩니다."
+        android:textSize="21dp"
+        app:layout_constraintStart_toStartOf="@id/tv_device_search"
+        app:layout_constraintTop_toBottomOf="@id/tv_device_search" />
+
+    <TextView
+        android:id="@+id/tv_device_pairable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="18dp"
+        android:text="연결 가능한 장치"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/vw_line"
+        app:layout_constraintStart_toStartOf="@id/tv_message_search"
+        app:layout_constraintTop_toBottomOf="@id/tv_message_search" />
+
+    <View
+        android:id="@+id/vw_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD"
+        app:layout_constraintBottom_toTopOf="@id/lv_device_pairable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_device_pairable" />
+
+    <ListView
+        android:id="@+id/lv_device_pairable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tv_device_pairable"
+        app:layout_constraintTop_toBottomOf="@id/vw_line" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
